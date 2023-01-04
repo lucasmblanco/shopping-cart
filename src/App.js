@@ -1,20 +1,35 @@
 import './styles/global.css'
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header'
 import NavBar from './components/NavBar'
 import {Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'; 
 import Shop from './pages/Shop'; 
 import Contact from './pages/Contact';
+import Products from './components/Products';
+//import Cart from './components/Cart'; 
+//import { useState } from 'react'
+
 
 function App() {
+
+  const [ cart, setCart ] = useState([])
+
+  function addProduct(product){
+    setCart([...cart, product])
+  }
+
+
+  
+  
+
  return (
  <div className="bg-gradient-to-bl from-blue-accent via-lightblue-accent to-lightest-blue-accent">
     <Header />
-    <NavBar />
+    <NavBar cart={cart}/>
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/shop' element={<Shop />} />
+      <Route path='/shop' element={<Shop addProduct={addProduct} />} />
       <Route path='contact' element={<Contact />} />
     </Routes>
 

@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import Cart from './Cart';
 
+export default function NavBar({cart}){
 
-export default function NavBar(){
+  const [open, setOpen ] = useState(false);
+
+  function openCart(){
+    setOpen(!open); 
+  }
+
   return(
-    <nav className=' sticky top-5 mx-auto w-96 h-16 rounded-xl flex bg-red-accent shadow-3xl items-center justify-center shadow-xl border-solid border-light-red-accent border-2'>
+    <nav className=' sticky top-5 mx-auto w-96 h-16 rounded-xl flex bg-red-accent shadow-3xl items-center 
+    justify-center shadow-xl border-solid border-light-red-accent border-2 z-40'>
       <ul className='flex'>
       {
-        ['HOME', 'SHOP', 'CONTACT', 'CART'].map(element => {
+        ['HOME', 'SHOP', 'CONTACT'].map(element => {
            return <li className='p-5' key={element}>
           <Link to={ element === 'HOME' ? '/' : `/${element.toLowerCase()}`} 
            className='text-white font-inter'>
@@ -15,6 +23,10 @@ export default function NavBar(){
           </Link>
           </li>
         })
+      }
+      <li className='p-5'><button className='text-white font-inter ' onClick={openCart}>CART</button></li>
+      {
+        open ? <Cart cart={cart}/> : null
       }
       </ul>
     </nav>
