@@ -6,27 +6,57 @@ import {Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'; 
 import Shop from './pages/Shop'; 
 import Contact from './pages/Contact';
-import Products from './components/Products';
+//import Products from './components/Products';
 //import Cart from './components/Cart'; 
 //import { useState } from 'react'
 
 
 function App() {
 
-  const [ cart, setCart ] = useState([])
+  const [ products, setProducts ] = useState([])
+
+  // ACTUALIZAR COMPONENTE CUANDO NO SE ENCUENTRA EN EL CARRITO 
+
+
+  function deleteItem(id){
+
+    setProducts(products.filter(product => product.id !== id))
+}
 
   function addProduct(product){
-    setCart([...cart, product])
+/*
+    const duplicateProduct = products.find(element => element.id === product.id); 
+    if(duplicateProduct){
+      setProducts(products.map(products => {
+       return products.id === product.id && {...products, quantity: products.quantity + product['quantity'], price: products.price * product['quantity']}
+      }
+      ))
+    } else {*/
+      setProducts([...products, product])
+    
   }
 
+     
+
+/*
+    if(product['quantity'] < 2) {
+      setCart([...cart, product, cart[productDuplicate]['quantity']: product['quantity']])
+      
+    } else {
+      setCart([...cart, product.id])
+    }
+    */
 
   
+
+ 
   
+
 
  return (
  <div className="bg-gradient-to-bl from-blue-accent via-lightblue-accent to-lightest-blue-accent">
     <Header />
-    <NavBar cart={cart}/>
+    <NavBar products={products} deleteItem={deleteItem}/>
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/shop' element={<Shop addProduct={addProduct} />} />

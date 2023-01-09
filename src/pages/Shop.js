@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import Product from '../components/Products'; 
+import Product from '../components/Product'; 
 
 export default function Shop({addProduct}) {
   const [products, setProducts] = useState([])
@@ -20,12 +20,15 @@ export default function Shop({addProduct}) {
   }, []); 
   
 
+// PASAR PRODUCT QUANTITY EN 1 Y PREPARAR PRODUCT PARA OBTENER INFO DE AHI 
   return (
     <div className='min-h-[calc(100vh_-_15rem)] flex justify-center'>
     <div className='w-6/12 text-3xl font-inter grid grid-cols-3 grid-rows-2  gap-20 p-10'>
-    {products.map(product => {
-      return <Product key={product.id} data={product} addProduct={addProduct}/> 
-     })}
+    {
+      products.map(product => {
+        return <Product key={product.id} data={product} addProduct={addProduct} quantity={1}/> 
+      })
+     }
     </div>
     </div>
   )

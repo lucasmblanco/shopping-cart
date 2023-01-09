@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import Cart from './Cart';
 
-export default function NavBar({cart}){
+export default function NavBar({products,  deleteItem}){
 
-  const [open, setOpen ] = useState(false);
+  const [open, setOpen] = useState(false);
 
   function openCart(){
     setOpen(!open); 
@@ -24,10 +24,8 @@ export default function NavBar({cart}){
           </li>
         })
       }
-      <li className='p-5'><button className='text-white font-inter ' onClick={openCart}>CART</button></li>
-      {
-        open ? <Cart cart={cart}/> : null
-      }
+      <li className='p-5'><button className='text-white font-inter' onClick={openCart}>CART</button></li>
+      { open && <Cart products={products} deleteItem={deleteItem}/> }
       </ul>
     </nav>
   )
