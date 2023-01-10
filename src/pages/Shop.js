@@ -2,9 +2,8 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import Product from '../components/Product'; 
 
-export default function Shop({addProduct}) {
-  const [products, setProducts] = useState([])
- // const [isLoading, SetIsLoading] = useState(false); 
+export default function Shop({addProduct, checkProductStatus}) {
+  const [products, setProducts] = useState([]);
 
   useEffect( () => {
     async function fetchData(){
@@ -19,14 +18,13 @@ export default function Shop({addProduct}) {
     fetchData();
   }, []); 
   
-
-// PASAR PRODUCT QUANTITY EN 1 Y PREPARAR PRODUCT PARA OBTENER INFO DE AHI 
   return (
     <div className='min-h-[calc(100vh_-_15rem)] flex justify-center'>
     <div className='w-6/12 text-3xl font-inter grid grid-cols-3 grid-rows-2  gap-20 p-10'>
     {
       products.map(product => {
-        return <Product key={product.id} data={product} addProduct={addProduct} quantity={1}/> 
+        const status = checkProductStatus(product.id); 
+        return <Product key={product.id} data={product} addProduct={addProduct} quantity={1} status={status}/> 
       })
      }
     </div>
