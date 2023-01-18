@@ -19,13 +19,13 @@ function App() {
         return {
             ...product, 
             quantity: product.quantity + 1,
-            totalPrice: product.price * (product.quantity + 1)
+           // totalPrice: product.price * (product.quantity + 1)
         }
     } else if(product.id === id && action === 'decrement') {
         return {
             ...product, 
             quantity: product.quantity - 1, 
-            totalPrice: product.price * (product.quantity - 1)
+          //  totalPrice: product.price * (product.quantity - 1)
         }
     } else {
         return {...product }
@@ -47,7 +47,7 @@ function App() {
 
   useEffect(() => {
     const sumTotal = products.reduce((acc, product) => {
-      return  acc + product['totalPrice'] 
+      return  acc + (product.price * product.quantity)
     }, 0);
 
     setTotal(sumTotal)
@@ -55,16 +55,17 @@ function App() {
 
 
  return (
- <div className="bg-gradient-to-bl from-blue-accent via-lightblue-accent to-lightest-blue-accent">
+ <div className="bg-gradient-to-bl from-blue-accent via-lightblue-accent to-lightest-blue-accent animate-gradient-x">
     <Header />
-    <div className=' top-5 flex justify-center w-full sticky'>
+    <div className=' top-5 flex justify-center w-full sticky z-40'>
     <NavBar />
     <Cart products={products} deleteProduct={deleteProduct} addQuantity={addQuantity} total={total}/>
     </div>
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/shop' element={<Shop addProduct={addProduct} checkProductStatus={checkProductStatus}/>} />
-      <Route path='contact' element={<Contact />} />
+      <Route path='/contact' element={<Contact />} />
+      
     </Routes>
 
   </div >
@@ -73,38 +74,3 @@ function App() {
 }
 
 export default App;
-
-
-/*
- const [loading, setLoading] = useState(false)
-  const [images, setImages] = useState(''); 
-  const [action, setAction] = useState(() => false); 
-
-useEffect( () => {
-  async function test(){
-    try{
-      setLoading(true); 
-      const response = await fetch('https://fakestoreapi.com/products/category/electronics');
-      const  data  = await response.json(); 
-      console.log(data); 
-    } catch(err){
-      console.log(err); 
-    }
-  }
-
-  test();
- 
-}, [action]); 
-
-  return (
-    <ChakraProvider  resetCSS={true}>
-      <h1>HOLA PROBANDO CHAKRA</h1>
-      <button onClick={() => setAction(prevAction => !prevAction)}>Activate</button>
-      <CSSReset />
-     {
-      action ? loading ? <div>LOADING...</div> : <img src={images} alt="testing" /> : null
-     }
-   
-    </ChakraProvider>
-  );
-  */
