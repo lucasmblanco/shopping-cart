@@ -1,6 +1,6 @@
 import React, {useState } from 'react'
 //import ProductInCart from './ProductInCart'
-import ProductInCart from './ProductInCart';
+import ProductInCart from './Cart/ProductInCart';
 import {HiShoppingCart } from 'react-icons/hi'
 import EmptyCart from './Cart/EmptyCart'
 
@@ -17,8 +17,8 @@ export default function Cart({products, deleteProduct, addQuantity, total}) {
         <> 
         <button className=' h-12 text-white font-inter rounded-tr-xl rounded-br-xl bg-red-accent border-light-red-accent 
         border-t-2 border-b-2 border-r-2 p-4' onClick={openCart}><div className='hover:drop-shadow-nxl transition-all duration-500 '><HiShoppingCart /></div></button>
-        {products.length > 0 && <div className='flex items-center justify-center text-sm absolute 
-        left-[64.5rem] top-1 rounded-full h-5 w-5 animate-fade-in-bck-open bg-lightest-blue-accent font-inter bg-opacity-75'>
+        { products.length > 0 && <div className='flex items-center justify-center text-sm absolute 
+        left-[64.5rem] top-1 rounded-full h-5 w-5 animate-fade-in-bck-open bg-lightest-blue-accent font-inter bg-opacity-75 '>
             {products.reduce((acc, product) => acc + product.quantity, 0)}</div>}
         { open && 
                 <div className='flex flex-col absolute m-3 w-96 h-96 top-[3rem] left-cart-left-position p-4 text-black 

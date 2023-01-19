@@ -25,11 +25,13 @@ export default function Home() {
       col-start-6 col-span-6 row-start-3 
       row-span-18 shadow-xl animate-fade-in-bck-3' src={ImageThree} alt='promo'>
       </img>
-      <div className='h-44 w-div-home-width bg-red-accent rounded-xl z-20 col-start-15 row-start-14 shadow-xl border-solid border-light-red-accent border-2 animate-fade-in-bck-4' >
+      <div className='h-44 w-div-home-width bg-red-accent rounded-xl z-20 col-start-15
+       row-start-14 shadow-xl border-solid border-light-red-accent border-2 animate-fade-in-bck-4' >
         <p className='m-3 w-50'>WE MAKE THE <span className='text-white-accent'>FUTURE</span> AVAILABLE</p>
         <div className='flex justify-evenly content-center'>
           <div className='flex items-center text-white-accent'>TODAY</div>
-          <Link to='/shop' preventScrollReset={true} className='bg-black rounded-xl text-white-accent p-3 shadow-xl transition-all duration-500 hover:bg-light-red-accent'>SHOW NOW</Link>
+          <Link to='/shop' preventScrollReset={true} className='bg-black rounded-xl text-white-accent p-3 
+          shadow-xl transition-all duration-500 hover:bg-light-red-accent'>SHOP NOW</Link>
           </div>
 
       </div>

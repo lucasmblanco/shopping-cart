@@ -12,10 +12,10 @@ export default function Contact() {
       <span className='inline-box p-2'>FIND US</span>
       <div className='flex items-center justify-center text-sm'><HiLocationMarker /><span className= 'text-sm pl-2'>Rodeo Drive 42, Los Angeles USA</span></div>
       <div className='flex w-full justify-around m-4'>
-        <a href="https://github.com/lucasmblanco" target="_blank" rel="noreferrer"><RiGithubFill /></a>
-        <a href="https://www.youtube.com/watch?v=G1IbRujko-A" target="_blank" rel="noreferrer"><RiInstagramFill /> </a>
-        <a href="https://www.youtube.com/watch?v=G1IbRujko-A" target="_blank" rel="noreferrer"><RiFacebookCircleFill /></a>
-        <a href="https://www.youtube.com/watch?v=G1IbRujko-A" target="_blank" rel="noreferrer"><RiTwitterFill /></a>
+        <a className='transition-all duration-500  hover:drop-shadow-nxl' href="https://github.com/lucasmblanco" target="_blank" rel="noreferrer"><RiGithubFill /></a>
+        <a className='transition-all duration-500  hover:drop-shadow-nxl' href="https://www.youtube.com/watch?v=G1IbRujko-A" target="_blank" rel="noreferrer"><RiInstagramFill /> </a>
+        <a className='transition-all duration-500  hover:drop-shadow-nxl' href="https://www.youtube.com/watch?v=G1IbRujko-A" target="_blank" rel="noreferrer"><RiFacebookCircleFill /></a>
+        <a className='transition-all duration-500  hover:drop-shadow-nxl' href="https://www.youtube.com/watch?v=G1IbRujko-A" target="_blank" rel="noreferrer"><RiTwitterFill /></a>
         </div>
       </div>
     </div>

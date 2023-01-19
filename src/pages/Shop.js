@@ -6,18 +6,24 @@ import { AiOutlineLoading } from "react-icons/ai";
 export default function Shop({addProduct, checkProductStatus}) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true); 
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const abortController = new AbortController();
 
     async function fetchData(){
-      try{
-        const response = await fetch('https://fakestoreapi.com/products/category/electronics');
-        const  data  = await response.json(); 
-        setProducts([...data]); 
-        setIsLoading(false)
-      } catch(err){
-        console.log(err); 
+      try {
+        const res = await fetch('https://fakestoreapi.com/products/category/electronics');
+        if(res.ok){
+          const  data  = await res.json(); 
+          setProducts([...data]); 
+          setIsLoading(false);
+        } else {
+          setError("Can't obtain products information");
+        }
+        
+      } catch(err) {
+        setError("Can't connect with the database"); 
       }
     }
 
@@ -31,10 +37,23 @@ export default function Shop({addProduct, checkProductStatus}) {
 
   if(isLoading){
     return <div className='flex items-center justify-center min-h-[calc(100vh_-_14rem)]'>
-              <div className='backdrop-blur-xl backdrop-blur-3xl backdrop-brightness-50 text-white-accent p-3 rounded-xl animate-fade-in-bck-open'><span className='inline-block animate-spin'><AiOutlineLoading /></span></div>
+              <div className='flex items-center backdrop-blur-3xl backdrop-brightness-50
+               text-white-accent p-1 rounded-xl animate-fade-in-bck-open border border-gray-500'>
+                <span className='inline-block animate-spin p-1'><AiOutlineLoading /></span>
+                <span className='font-inter p-1'>LOADING</span>
+              </div>
             </div>
   }
   
+
+  if(error){
+    console.log(error)
+    return <div className='flex items-center justify-center min-h-[calc(100vh_-_14rem)]'>
+      <div className=' font-inter text-xl backdrop-blur-3xl backdrop-brightness-50
+               text-white-accent p-4 rounded-xl animate-fade-in-bck-open border border-gray-500'>{error}</div>
+    </div>
+  }
+
   return (
     <div className='min-h-[calc(100vh_-_14rem)] flex justify-center'>
     <div className='w-10/12 text-3xl font-inter grid grid-cols-3 grid-rows-2 gap-10 p-10'>
