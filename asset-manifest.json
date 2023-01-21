@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.9bd29935.css",
+    "main.js": "/shopping-cart/static/js/main.90fb8d6e.js",
+    "static/media/home-2.jpg": "/shopping-cart/static/media/home-2.3c9fb5e793cbb427d8b5.jpg",
+    "static/media/home-3.jpg": "/shopping-cart/static/media/home-3.75da0374059b7f5333b4.jpg",
+    "static/media/home-1.jpg": "/shopping-cart/static/media/home-1.2392a8db13d5a9aab1db.jpg",
+    "static/media/electronic-things-store.jpg": "/shopping-cart/static/media/electronic-things-store.9bc3993456402b4843cd.jpg",
+    "static/media/Inter-Bold.woff?v=3.19": "/shopping-cart/static/media/Inter-Bold.93c1301bd9f486c573b3.woff",
+    "static/media/Inter-Bold.woff2?v=3.19": "/shopping-cart/static/media/Inter-Bold.ec64ea577b0349e055ad.woff2",
+    "index.html": "/shopping-cart/index.html",
+    "main.9bd29935.css.map": "/shopping-cart/static/css/main.9bd29935.css.map",
+    "main.90fb8d6e.js.map": "/shopping-cart/static/js/main.90fb8d6e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9bd29935.css",
+    "static/js/main.90fb8d6e.js"
+  ]
+}
