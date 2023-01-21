@@ -4,6 +4,7 @@ exports[`should render component 1`] = `
 <DocumentFragment>
   <div
     class=" flex flex-col items-center justify-center h-[calc(100vh_-_14rem)] text-3xl font-inter"
+    data-testid="contact-component"
   >
     <img
       alt="Store front"
@@ -11,7 +12,7 @@ exports[`should render component 1`] = `
       src="electronic-things-store.jpg"
     />
     <div
-      class="flex flex-col p-3 justify-center items-center relative 
+      class="flex flex-col justify-center items-center relative
  top-[-60px] bg-red-accent rounded-xl p-4 text-white-accent shadow-xl border-2 border-light-red-accent animate-fade-in-bck-open"
     >
       <span

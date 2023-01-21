@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
-<div>
+exports[`should render the component 1`] = `
+<DocumentFragment>
   <div
     class="flex items-center justify-center min-h-[calc(100vh_-_14rem)]"
+    data-testid="loading-component"
   >
     <div
       class="flex items-center backdrop-blur-3xl backdrop-brightness-50
@@ -33,5 +34,5 @@ exports[`renders correctly 1`] = `
       </span>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

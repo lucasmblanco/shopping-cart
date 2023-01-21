@@ -4,31 +4,32 @@ exports[`renders Home component 1`] = `
 <DocumentFragment>
   <div
     class="relative h-[calc(100vh_-_14rem)] text-3xl font-inter grid grid-cols-home grid-rows-home-rows z-0"
+    data-testid="home-component"
   >
     <img
       alt="promo"
-      class="top-image-one-top 
- left-image-one-left w-image-width  
- rounded-xl overflow-hidden z-10 
- col-start-10 col-span-6 row-start-12 
+      class="top-image-one-top
+ left-image-one-left w-image-width
+ rounded-xl overflow-hidden z-10
+ col-start-10 col-span-6 row-start-12
  row-span-18 shadow-xl animate-fade-in-bck"
       src="home-1.jpg"
     />
     <img
       alt="promo"
-      class="top-image-one-top 
- left-image-one-left w-image-width  
+      class="top-image-one-top
+ left-image-one-left w-image-width
  rounded-xl overflow-hidden z-0
- col-start-14 col-span-6 row-start-3 
+ col-start-14 col-span-6 row-start-3
  row-span-18 shadow-xl animate-fade-in-bck-2"
       src="home-2.jpg"
     />
     <img
       alt="promo"
-      class="top-image-one-top 
- left-image-one-left w-image-width  
+      class="top-image-one-top
+ left-image-one-left w-image-width
  rounded-xl overflow-hidden z-0
- col-start-6 col-span-6 row-start-3 
+ col-start-6 col-span-6 row-start-3
  row-span-18 shadow-xl animate-fade-in-bck-3"
       src="home-3.jpg"
     />
@@ -56,7 +57,7 @@ exports[`renders Home component 1`] = `
           TODAY
         </div>
         <a
-          class="bg-black rounded-xl text-white-accent p-3 
+          class="bg-black rounded-xl text-white-accent p-3
  shadow-xl transition-all duration-500 hover:bg-light-red-accent"
           href="/shop"
         >

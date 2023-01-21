@@ -55,22 +55,32 @@ function App() {
 
 
  return (
- <div className="bg-gradient-to-bl from-blue-accent via-lightblue-accent to-lightest-blue-accent animate-gradient-x">
-    <Header />
-    <div className=' top-5 flex justify-center w-full sticky z-40'>
-    <NavBar />
-    <Cart products={products} deleteProduct={deleteProduct} addQuantity={addQuantity} total={total}/>
-    </div>
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/shop' element={<Shop addProduct={addProduct} checkProductStatus={checkProductStatus}/>} />
-      <Route path='/contact' element={<Contact />} />
-      
-    </Routes>
-
-  </div >
-
- )
+   <div className="bg-gradient-to-bl from-blue-accent via-lightblue-accent to-lightest-blue-accent animate-gradient-x">
+     <Header />
+     <div className=" top-5 flex justify-center w-full sticky z-40">
+       <NavBar />
+       <Cart
+         products={products}
+         deleteProduct={deleteProduct}
+         addQuantity={addQuantity}
+         total={total}
+       />
+     </div>
+     <Routes>
+       <Route path="/" element={<Home />} />
+       <Route
+         path="/shop"
+         element={
+           <Shop
+             addProduct={addProduct}
+             checkProductStatus={checkProductStatus}
+           />
+         }
+       />
+       <Route path="/contact" element={<Contact />} />
+     </Routes>
+   </div>
+ );
 }
 
 export default App;

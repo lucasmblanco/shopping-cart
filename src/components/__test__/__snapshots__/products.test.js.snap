@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the component with passing data 1`] = `
+<DocumentFragment>
+  <div
+    class=" h-product-cards bg-white rounded-[calc(0.5rem_+_2px)] flex flex-col items-center shadow-xl border-solid border-2
+ border-light-red-accent animate-fade-in-bck-open"
+    data-testid="shop-product"
+  >
+    <div
+      class="w-80 h-56 p-5 flex justify-center"
+    >
+      <img
+        alt="MockProduct"
+        class="h-full "
+        src="abc.jpg"
+      />
+    </div>
+    <div
+      class=" flex justify-between flex-col basis-full items-center rounded-br-lg text-white rounded-bl-lg bg-red-accent h-full w-full text-center"
+    >
+      <div
+        class=" text-sm text-center p-3 w-full "
+      >
+        MockProduct
+      </div>
+      <div
+        class="text-gray-600 text-xs w-full"
+      >
+        MOCKCATEGORY
+      </div>
+      <div
+        class=" text-xs w-full"
+      >
+        1/5
+      </div>
+      <div
+        class=" text-2xl w-full m-none bg-red-500 p-3 tracking-wide"
+      >
+        $1
+      </div>
+      <button
+        class="text-lg bg-red-accent p-4 m-3 rounded-xl hover:bg-light-red-accent
+ border-light-red-accent hover:border-red-accent border-2 transition-all duration-500"
+      >
+        ADD TO CART
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

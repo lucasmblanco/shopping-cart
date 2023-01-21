@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the component 1`] = `
+<DocumentFragment>
+  <div
+    class="h-44 flex justify-center"
+  >
+    <img
+      alt="company-logo"
+      class="m-10 object-cover"
+      src="logo-et.png"
+    />
+  </div>
+</DocumentFragment>
+`;

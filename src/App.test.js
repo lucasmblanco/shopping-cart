@@ -1,7 +1,7 @@
 import React from "react";
-import { render, screen, toBeInTheDocument } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import "@testing-library/jest-dom";  // optional
+import '@testing-library/jest-dom';  
 import userEvent from "@testing-library/user-event";
 import App from './App'; 
 
@@ -16,3 +16,4 @@ test('interacting with link from home component should replace content with shop
          expect(image).not.toBeInTheDocument();
     })
 })
+

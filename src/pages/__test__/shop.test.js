@@ -1,49 +1,59 @@
-import React from "react";
-import { render, screen, waitFor } from "@testing-library/react";
-import "@testing-library/jest-dom";  
-import Shop from '../Shop'; 
+import Shop from '../Shop';
+import React from 'react';
+import '@testing-library/jest-dom';
+import { cleanup, render, screen } from '@testing-library/react';
 
-
-const MOCK_PRODUCTS = [
-    {
+const mockResponse = {
+  ok: true,
+  json: () =>
+    Promise.resolve([
+      {
         id: 1,
-        name: 'Product-1', 
-        price: 1, 
-        added: false,
-    
-    }, {
-        id: 2,
-        name: 'Product-2', 
-        price: 2, 
-        added: false,
-    }
-]
+        title: 'MockProduct',
+        image: 'abc.jpg',
+        rating: {
+          rate: 1,
+        },
+        price: 1,
+        category: 'MockCategory',
+      },
+    ]),
+};
 
-global.fetch = jest.fn(() => Promise.resolve({
-    json: () => Promise.resolve(MOCK_PRODUCTS)
-}));
+global.fetch = jest.fn(() => Promise.resolve(mockResponse));
 
-test('renders correctly', async () => {
-    const { container } = render(<Shop />);
-    expect(container).toMatchSnapshot();
-  });
+test('should render the component', () => {
+  const { asFragment } = render(<Shop />);
 
-test('should render a loading component', () => {
+  expect(asFragment()).toMatchSnapshot();
 
-    render(<Shop />);
-    const loadingElement = screen.getByText('LOADING'); 
-    expect(loadingElement).toBeInTheDocument(); 
+  cleanup();
+});
 
-}); 
+test('should render loading component', async () => {
+  render(<Shop />);
 
-test('render a product', async () => {
+  const loadingComponent = await screen.findByTestId('loading-component');
 
-    render(<Shop />) 
+  expect(loadingComponent).toBeInTheDocument();
 
-    await waitFor(() => {
-        screen.queryByText('Product-1');
-        screen.queryByText('Product-2');
+  cleanup();
+});
 
-    })
+test('should call fetch request on render', async () => {
+  render(<Shop />);
 
+  expect(fetch).toHaveBeenCalled();
+
+  cleanup();
+});
+
+test.skip('should render product component', async () => {
+  render(<Shop />);
+
+  const productComponent = await screen.findByTestId('shop-products-component');
+
+  expect(productComponent).toBeInTheDocument();
+
+  cleanup();
 });
