@@ -68,7 +68,7 @@ export default function Shop({ addProduct, checkProductStatus }) {
     <div
       data-testid="shop-products-component"
       className="min-h-[calc(100vh_-_14rem)] flex justify-center">
-      <div className="w-10/12 text-3xl font-inter grid grid-cols-3 grid-rows-2 gap-10 p-10">
+      <div className="w-10/12 text-3xl font-inter flex flex-col desktop:grid grid-cols-3 grid-rows-2 gap-10 p-10">
         {products.map((product) => {
           const status = checkProductStatus(product.id);
           return (

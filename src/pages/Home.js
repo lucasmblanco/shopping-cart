@@ -6,51 +6,49 @@ import ImageThree from '../assets/images/home/home-3.jpg';
 
 export default function Home() {
   return (
-    <div data-testid='home-component'className="relative h-[calc(100vh_-_14rem)] text-3xl font-inter grid grid-cols-home grid-rows-home-rows z-0">
+    <div
+      data-testid="home-component"
+      className="relative h-[calc(100vh_-_14rem)] text-3xl font-inter flex flex-col gap-6 desktop:grid auto-rows-auto
+       grid-cols-1 desktop:grid-cols-2 place-items-center z-0 p-5">
       <img
-        className="top-image-one-top
-      left-image-one-left w-image-width
-      rounded-xl overflow-hidden z-10
-      col-start-10 col-span-6 row-start-12
-      row-span-18 shadow-xl animate-fade-in-bck"
+        className="relative desktop:left-[13rem] sm:w-[15rem] sm:h-[50rem] desktop:w-image-width
+      rounded-xl overflow-hidden z-0
+      shadow-xl animate-fade-in-bck"
         src={ImageOne}
         alt="promo"
       />
-
       <img
-        className="top-image-one-top
-      left-image-one-left w-image-width
+        className=" relative desktop:right-[13rem] sm:w-[15rem] sm:h-[50rem]  desktop:w-image-width
       rounded-xl overflow-hidden z-0
-      col-start-14 col-span-6 row-start-3
-      row-span-18 shadow-xl animate-fade-in-bck-2"
+      shadow-xl animate-fade-in-bck-2"
         src={ImageTwo}
         alt="promo"
       />
 
       <img
-        className="top-image-one-top
-      left-image-one-left w-image-width
-      rounded-xl overflow-hidden z-0
-      col-start-6 col-span-6 row-start-3
-      row-span-18 shadow-xl animate-fade-in-bck-3"
+        className="relative  desktop:left-[28rem] sm:w-[15rem] sm:h-[50rem] desktop:bottom-[5rem] desktop:w-image-width
+      rounded-xl overflow-hidden z-10
+      shadow-xl animate-fade-in-bck-3"
         src={ImageThree}
         alt="promo"
       />
 
       <div
-        className="h-44 w-div-home-width bg-red-accent rounded-xl z-20 col-start-15
-       row-start-14 shadow-xl border-solid border-light-red-accent border-2 animate-fade-in-bck-4">
+        className="relative desktop:right-[10rem] text-base desktop:text-2xl desktop:bottom-[5rem] h-[20rem] w-[17rem] desktop:h-44 desktop:w-div-home-width
+       bg-red-accent rounded-xl z-20  shadow-xl border-solid border-light-red-accent border-2 animate-fade-in-bck-4 text-center p-2">
         <p className="m-3 w-50">
           WE MAKE THE <span className="text-white-accent">FUTURE</span>{' '}
           AVAILABLE
         </p>
-        <div className="flex justify-evenly content-center">
-          <div className="flex items-center text-white-accent">TODAY</div>
+        <div className="flex justify-center desktop:justify-evenly content-center mr-2">
+          <div className="flex items-center text-white-accent text-xl desktop:text-2xl">
+            TODAY
+          </div>
           <Link
             to="/shop"
             preventScrollReset
-            className="bg-black rounded-xl text-white-accent p-3
-          shadow-xl transition-all duration-500 hover:bg-light-red-accent">
+            className="bg-black rounded-xl text-white-accent p-2 desktop:p-3
+          shadow-xl transition-all duration-500 hover:bg-light-red-accent ml-2">
             SHOP NOW
           </Link>
         </div>
@@ -59,27 +57,3 @@ export default function Home() {
   );
 }
 
-/*
-export default function Home() {
-  return (
-    <div className='h-[calc(100vh_-_15rem)] text-3xl font-inter flex justify-content'>
-      <div className='absolute top-image-one-top left-image-one-left w-image-width  rounded-xl overflow-hidden z-10'>
-        <img  src={ImageOne} alt='promo'></img>
-      </div>
-      <div className='absolute top-80 left-image-three-left w-image-width  rounded-xl overflow-hidden z-0'>
-        <img src={ImageThree} alt="promo-three"/>
-      </div>
-      <div className='absolute top-72 left-image-two-left w-image-width rounded-xl overflow-hidden '>
-        <img src={ImageTwo} alt="promo two"/>
-      </div>
-      <div className='h-44 w-div-home-width bg-red-accent rounded-xl z-20 text-left'>
-        <p className='m-3 w-50'>WE MAKE THE FUTURE AVAILABLE</p>
-        <div className='flex justify-between p-3 content-center'>
-          <div className='flex items-center text-white ' >TODAY</div>
-          <Link to='/shop' className='bg-black rounded-xl text-white p-3'>SHOW NOW</Link>
-          </div>
-
-      </div>
-    </div>
-  )
-} */

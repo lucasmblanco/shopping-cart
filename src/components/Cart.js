@@ -32,9 +32,9 @@ export default function Cart({ products, deleteProduct, addQuantity, total }) {
       {open && (
         <div
           data-testid="cart-body"
-          className="flex flex-col absolute m-3 w-96 h-96 top-[3rem] left-cart-left-position p-4 text-black 
+          className="flex flex-col absolute m-3 w-96 h-96 top-[3rem] desktop:top-[3rem] left-[20rem] desktop:left-cart-left-position p-4 text-black 
                 rounded-[calc(0.5rem_+_2px)] backdrop-blur-3xl backdrop-brightness-50
-                font-inter text-center animate-fade-in-bck-open">
+                font-inter text-center animate-open-anim">
           <div className="flex justify-center p-2 text-lightest-blue-accent">
             <HiShoppingCart />
           </div>

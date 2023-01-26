@@ -55,9 +55,9 @@ function App() {
 
 
  return (
-   <div className="bg-gradient-to-bl from-blue-accent via-lightblue-accent to-lightest-blue-accent animate-gradient-x">
+   <div className="bg-gradient-to-bl from-blue-accent via-lightblue-accent to-lightest-blue-accent animate-gradient-x ">
      <Header />
-     <div className=" top-5 flex justify-center w-full sticky z-40">
+     <div className="flex justify-center w-full sticky z-40 mb-12">
        <NavBar />
        <Cart
          products={products}
